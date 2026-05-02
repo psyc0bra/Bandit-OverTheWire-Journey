@@ -17,7 +17,7 @@
 * **Level 9:** Gained "X-Ray Vision." Used `strings data.txt | grep "=="` to find a password hidden inside a binary (non-text) file.
 * **Level 10:** Dealt with web-data encoding. Used `base64 -d data.txt` to turn gibberish into a clear, usable password.
 
-###Levels 11 -> 13: Cryptography & Remote Access
-* **Level 11: Deciphered the ROT13 cipher. Used tr 'A-Za-z' 'N-ZA-Mn-za-m' to "rotate" the alphabet by 13 positions, turning the scrambled text back into the password.
-* **Level 12: The "Hex Dump" puzzle. Used xxd -r data.txt to convert a hex dump back into a compressed file, then repeatedly used zcat, bzip2, and tar to peel back multiple layers of nested compression like a digital Russian nesting doll.
-* **Level 13: The Private Key Pivot. Encountered a "localhost login blocked" error when trying to use a private SSH key from within the server. Solved it by using scp to download the sshkey.private file to my local machine, setting permissions to 600 to satisfy SSH security requirements, and logging in directly from my own terminal.
+Levels 11 -> 13: Cryptography & Remote Access
+Level 11: Deciphered the ROT13 cipher. Used tr 'A-Za-z' 'N-ZA-Mn-za-m' to "rotate" the alphabet by 13 positions, turning the scrambled text back into the password.
+Level 12: The "Hex Dump" puzzle. Used xxd -r data.txt to convert a hex dump back into a compressed file, then repeatedly used zcat, bzip2, and tar to peel back multiple layers of nested compression like a digital Russian nesting doll.
+Level 13: The Private Key Pivot. Encountered a "localhost login blocked" error when trying to use a private SSH key from within the server. Solved it by using scp to download the sshkey.private file to my local machine, setting permissions to 600 to satisfy SSH security requirements, and logging in directly from my own terminal.
