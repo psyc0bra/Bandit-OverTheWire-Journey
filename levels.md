@@ -17,9 +17,7 @@
 * **Level 9:** Gained "X-Ray Vision." Used `strings data.txt | grep "=="` to find a password hidden inside a binary (non-text) file.
 * **Level 10:** Dealt with web-data encoding. Used `base64 -d data.txt` to turn gibberish into a clear, usable password.
 
-Levels 11 -> 13: Cryptography & Remote Access
-Level 11: Deciphered the ROT13 cipher. Used tr 'A-Za-z' 'N-ZA-Mn-za-m' to "rotate" the alphabet by 13 positions. Learned that because 13 is exactly half the alphabet, the translation is reversible.
-
-Level 12: The "Hex Dump" puzzle. Used xxd -r data.txt to convert a hex dump back into a binary. Then, navigated a "compression maze" by repeatedly identifying file types with file and extracting them using zcat, bzip2, and tar.
-
-Level 13: The Private Key Pivot. Encountered an internal "localhost" block and copy-paste formatting issues. Solved it by using scp to transfer the sshkey.private file to my local machine, setting permissions to chmod 600, and logging in directly to Bandit 14 from my own terminal.
+### Levels 11 -> 13: Cryptography & Remote Access
+* **Level 11:** Deciphered the **ROT13 cipher**. Used `tr 'A-Za-z' 'N-ZA-Mn-za-m'` to "rotate" the alphabet by 13 positions, mapping the scrambled text back to the original password.
+* **Level 12:** The **"Hex Dump" puzzle**. Used `xxd -r data.txt` to convert a hex dump back into binary, then iteratively used `file`, `zcat`, `bzip2`, and `tar` to peel back multiple layers of nested compression like a digital Russian nesting doll.
+* **Level 13:** The **Private Key Pivot**. Encountered a "localhost login blocked" error. Solved it by using `scp` to download the `sshkey.private` file, applying `chmod 600` to satisfy SSH security requirements, and authenticating directly from my local terminal using the `-i` flag.
